@@ -15,6 +15,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Grid.RowSpan="1">
+            <RadioButton x:Name="rdoAll" Content="ALL" Click="rdoAll_Click"></RadioButton>
+            <RadioButton x:Name="rdoPlaystation" Content="Playstation" Click="rdoAll_Click"></RadioButton>
+            <RadioButton x:Name="rdoXbox" Content="Xbox" Click="rdoAll_Click"></RadioButton>
+            <RadioButton x:Name="rdoPC" Content="PC" Click="rdoAll_Click"></RadioButton>
+            <RadioButton x:Name="rdoSwitch" Content="Switch" Click="rdoAll_Click"></RadioButton>
+        </StackPanel>
         <ListBox Name="lbxGame" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="100" SelectionChanged="lbxGame_SelectionChanged"></ListBox>
         <TextBlock x:Name="tbxName" Grid.Row="0" Grid.Column="1" Margin="50,100,50,20"></TextBlock>
         <Image Name="imgGame" Grid.Row="1" Grid.Column="1" Margin="50,0,50,80"></Image>

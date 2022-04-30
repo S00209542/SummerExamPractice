@@ -28,7 +28,7 @@ namespace SummerExamPractice
         }
         public override string ToString()
         {
-            return Name;
+            return MetacriticScore.ToString();
         }
 
         public string GetDetails()
