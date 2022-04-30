@@ -10,7 +10,7 @@ namespace UnitTestForGame
         [TestMethod]
         public void TestMethodDecreasePrice()
         {
-            Game game1 = new Game() { Name = "Super Smash", Price = 60m};
+            Game game1 = new Game() { Name = "Super Smash", Price = 60m };
             decimal expected = 50m;
 
             game1.DecreasePrice(10m);
