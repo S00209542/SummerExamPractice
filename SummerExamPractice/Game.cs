@@ -26,6 +26,15 @@ namespace SummerExamPractice
         {
             Price -= discount;
         }
+        public override string ToString()
+        {
+            return Name;
+        }
+
+        public string GetDetails()
+        {
+            return $"Name: {Name}\nPlatform: {Platform}\nDescription: {Description}\nPrice: {Price}\nCritic Score: {MetacriticScore}"; 
+        }
     }
 
     public class GameData:DbContext
@@ -34,4 +43,6 @@ namespace SummerExamPractice
 
         public DbSet<Game> Games { get; set; }
     }
+
+    
 }

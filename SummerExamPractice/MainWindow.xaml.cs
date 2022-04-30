@@ -20,9 +20,33 @@ namespace SummerExamPractice
     /// </summary>
     public partial class MainWindow : Window
     {
+        GameData db = new GameData();
+        List<Game> allGames;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            var query = from g in db.Games
+                        orderby g.Name
+                        select g;
+
+            var result = query.ToList();
+            lbxGame.ItemsSource = result;
+        }
+
+        private void lbxGame_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Game selected = lbxGame.SelectedItem as Game;
+
+            if(selected != null)
+            {
+                tbxName.Text = selected.GetDetails();
+                imgGame.Source = new BitmapImage(new Uri(selected.Game_Image, UriKind.Relative));
+            }
         }
     }
 }
