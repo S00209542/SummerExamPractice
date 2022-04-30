@@ -6,6 +6,15 @@
         xmlns:local="clr-namespace:SummerExamPractice"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <DataTemplate x:Key="lbxTemp">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Image Source="{Binding Game_Image}" Width="50"/>
+                <TextBlock Text="{Binding MetacriticScore}" FontSize="24"/>
+            </StackPanel>
+            </DataTemplate>
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -22,7 +31,7 @@
             <RadioButton x:Name="rdoPC" Content="PC" Click="rdoAll_Click"></RadioButton>
             <RadioButton x:Name="rdoSwitch" Content="Switch" Click="rdoAll_Click"></RadioButton>
         </StackPanel>
-        <ListBox Name="lbxGame" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="100" SelectionChanged="lbxGame_SelectionChanged"></ListBox>
+        <ListBox ItemTemplate="{StaticResource lbxTemp}" Name="lbxGame" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="100" SelectionChanged="lbxGame_SelectionChanged"></ListBox>
         <TextBlock x:Name="tbxName" Grid.Row="0" Grid.Column="1" Margin="50,100,50,20"></TextBlock>
         <Image Name="imgGame" Grid.Row="1" Grid.Column="1" Margin="50,0,50,80"></Image>
     </Grid>

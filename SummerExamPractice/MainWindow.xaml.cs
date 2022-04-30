@@ -33,9 +33,6 @@ namespace SummerExamPractice
             var query = from g in db.Games
                         orderby g.Name
                         select g;
-            var query2 = from p in db.Games
-                         orderby p.Name
-                         select p.Game_Image;
 
             allGames = query.ToList();
             lbxGame.ItemsSource = allGames;
